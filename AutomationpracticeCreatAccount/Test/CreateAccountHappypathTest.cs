@@ -20,7 +20,7 @@ namespace AutomationpracticeCreatAccount.Test
             authPageObject.ClickOnSignInBtn();
 
             PrintMessage("3. Enter an email address in the Create an Account section (this email doesn’t have to be real)");
-            authPageObject.setCreateAccountEmailBox("abcz1234@yahoo.com");
+            authPageObject.setCreateAccountEmailBox("abck1234@yahoo.com");
 
             PrintMessage("4. Click the Create an account button");
             authPageObject.ClickOnCreateAccountBtn();

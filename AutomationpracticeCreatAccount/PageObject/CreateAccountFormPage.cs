@@ -1,7 +1,12 @@
-﻿using OpenQA.Selenium;
+﻿/*
+* Class Description: CreateAccountFormPag Class, is the page object, providce all the functionality methods to test the features
+* Author : Rajesh Vaghani
+* Date of Creation : May 09, 2021
+*/
+
+using OpenQA.Selenium;
 using System;
 using AutomationpracticeCreatAccount.Utils;
-using System.Threading;
 
 namespace AutomationpracticeCreatAccount.PageObject
 {

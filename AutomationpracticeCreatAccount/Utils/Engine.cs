@@ -1,11 +1,14 @@
-﻿
-
+﻿/*
+* Class Description: The Framework Engin Class, providce all the reusable funwrapper methos on selenium webdriver..
+* Author : Rajesh Vaghani
+* Date of Creation : May 09, 2021
+*/
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using System;
-using System.Collections.ObjectModel;
+
 
 namespace AutomationpracticeCreatAccount.Utils
 {
@@ -146,22 +149,23 @@ namespace AutomationpracticeCreatAccount.Utils
         /// <returns> string value of the field </returns>
         public string GetCSSValueOfElement(string xpath, string attribute)
         {
-            WaitUntilElementFound(xpath);
-            WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
-            IWebElement element = wait.Until(e => e.FindElement(By.XPath(xpath)));
-            return element.GetCssValue(attribute);
+            Wait(200);
+            return Driver.FindElement(By.XPath(xpath)).GetCssValue(attribute) ;
+            //WaitUntilElementFound(xpath);
+            //WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
+            //IWebElement element = wait.Until(e => e.FindElement(By.XPath(xpath)));
+            //return element.GetCssValue(attribute);
         }
 
         /// <summary>
         /// Pause execution for specified time
         /// </summary>
         /// <param name="time"> Time in ms format</param>
-        public static void Wait(int time = 2000)
+        public void Wait(int waitinterval = 2000)
         {
-            var waitTill = DateTime.Now.AddMilliseconds(time);
+            var waitTill = DateTime.Now.AddMilliseconds(waitinterval);
             while (DateTime.Now < waitTill) ;
         }
-
 
         /// <summary>
         /// Launch Browser with the give URL
@@ -208,29 +212,7 @@ namespace AutomationpracticeCreatAccount.Utils
             return true;
         }
 
-        //Just for reference, replacement of ElementToBeClickable
-        public void mySendKey(By by, String _value, int waitInterval = 30)
-        {
-            WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(waitInterval));
-            try
-            {
-                IWebElement myElement = wait.Until<IWebElement>(driver =>
-                {
-                    IWebElement tempElement = Driver.FindElement(by);
-                    return (tempElement.Displayed && tempElement.Enabled) ? tempElement : null;
-                }
-                );
-                myElement.Clear();
-                myElement.SendKeys(_value);
-            }
-            catch (WebDriverTimeoutException)
-            {
-                Assert.Fail($"Exception : element located by {by.ToString()} not visible and enabled within {waitInterval} seconds.");
-            }
-        }
-
-
-        public void TakeScreenShot(string filename = null)
+         public void TakeScreenShot(string filename = null)
         {
             if (filename == null) filename = "testfail";
             ITakesScreenshot screenshotDriver = Driver as ITakesScreenshot;

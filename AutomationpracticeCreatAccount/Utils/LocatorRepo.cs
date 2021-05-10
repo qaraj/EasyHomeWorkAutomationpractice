@@ -1,6 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿/*
+* Class Description: Locator repository
+* Author : Rajesh Vaghani
+* Date of Creation : May 09, 2021
+*/
 
 namespace AutomationpracticeCreatAccount.Utils
 {

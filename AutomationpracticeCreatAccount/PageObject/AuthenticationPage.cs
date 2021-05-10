@@ -1,4 +1,9 @@
-﻿using AutomationpracticeCreatAccount.Utils;
+﻿/*
+* Class Description: AuthenticationPage Class, is the page object, providce all the functionality methods to test the features
+* Author : Rajesh Vaghani
+* Date of Creation : May 09, 2021
+*/
+using AutomationpracticeCreatAccount.Utils;
 using OpenQA.Selenium;
 using System;
 

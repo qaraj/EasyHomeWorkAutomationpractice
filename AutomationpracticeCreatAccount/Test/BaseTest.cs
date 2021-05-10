@@ -1,6 +1,12 @@
-﻿using NUnit.Framework;
+﻿/*
+* Class Description: BaseTest Class, is the setup test class
+* Author : Rajesh Vaghani
+* Date of Creation : May 09, 2021
+*/
+
+using NUnit.Framework;
 using AutomationpracticeCreatAccount.PageObject;
-using NUnit.Framework.Internal;
+
 
 namespace AutomationpracticeCreatAccount.Test
 {
